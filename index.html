@@ -226,19 +226,21 @@ section { padding: 80px 40px; }
   box-shadow: 0 16px 48px rgba(15,31,56,0.12);
 }
 .project-img {
-  width: 100%; aspect-ratio: 16/9;
+  width: 100%;
   overflow: hidden; position: relative;
   background: var(--navy);
   min-height: 200px;
+  height: 220px;
 }
 .project-img img {
   width: 100%; height: 100%;
-  object-fit: cover;
-  object-position: top left;
+  object-fit: contain;
+  object-position: top center;
+  background: #f0f0f0;
   transition: transform 0.4s;
 }
 .project-img {
-  background: #0f1f38;
+  background: #f0f0f0;
 }
 .project-card:hover .project-img img { transform: scale(1.04); }
 .project-img-overlay {
@@ -590,9 +592,9 @@ footer {
           <div class="project-num">Project 01a · Demografy</div>
           <h3 class="project-title">Property Insights for Home Buyers — Suburb KPI Dashboard</h3>
           <p class="project-desc">
-            Built for Demografy's suburb intelligence product during my current internship. Analyses 671 Australian suburbs across 8 KPI dimensions including livability, community stability, affordability, and education level — helping homebuyers identify the right suburb for their lifestyle and budget.
+            Built for Demografy during my current internship. Analyses 671 Australian suburbs across livability, community stability, affordability, and education. Top stable family communities include Plenty-Yarrambat (81.30%) and Aspendale Gardens (80.82%). Melbourne CBD-North leads educated suburbs at 80.72%.
           </p>
-          <p class="project-question">"Where are the most stable family communities, blue-chip suburbs, and affordable entry points for first home buyers across Australia?"</p>
+          <p class="project-question">Key insight: Fig Tree Pocket and Castle Hill-West score highest on blue-chip socioeconomic indicators (3.41 and 3.39 Prosperity Score) — significantly above national average of 2.49.</p>
           <div class="project-tags">
             <span class="tag">Power BI</span><span class="tag">ABS Census</span>
             <span class="tag">KPI Framework</span><span class="tag">DAX</span>
@@ -600,8 +602,8 @@ footer {
           </div>
           <div class="project-metrics">
             <div class="metric"><div class="metric-num">671</div><div class="metric-lbl">Suburbs</div></div>
-            <div class="metric"><div class="metric-num">10</div><div class="metric-lbl">Business Questions</div></div>
-            <div class="metric"><div class="metric-num">8+</div><div class="metric-lbl">KPI Dimensions</div></div>
+            <div class="metric"><div class="metric-num">2.49</div><div class="metric-lbl">Avg Prosperity</div></div>
+            <div class="metric"><div class="metric-num">46.5%</div><div class="metric-lbl">Avg Learning</div></div>
           </div>
           <div class="project-footer">
             <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
@@ -621,18 +623,18 @@ footer {
           <div class="project-num">Project 01b · Demografy</div>
           <h3 class="project-title">Property Insights for Investors — Capital Growth &amp; Risk Dashboard</h3>
           <p class="project-desc">
-            Second Demografy dashboard targeting property investors. Covers gentrification signals, international migration demand, cashflow vs blue-chip zones, secure tenant profiling, and high-yield low-entry-cost opportunities — built on the same ABS-powered KPI framework.
+            Companion investor dashboard covering gentrification signals, cashflow zones, and capital growth opportunities across 671 suburbs. Bexley-North (0.87) and Strathfield South (0.86) show strongest gentrification indicators. Redbank Plains leads affordable investment at 96.09% Rental Access.
           </p>
-          <p class="project-question">"Which suburbs show early gentrification signals, offer the best cashflow yield, or represent undervalued educated markets for capital growth?"</p>
+          <p class="project-question">Key insight: Auburn-North (91.23%) and Rhodes (89.48%) show strongest international migration demand — indicating sustained rental demand driven by new arrivals settling in established communities.</p>
           <div class="project-tags">
             <span class="tag">Power BI</span><span class="tag">ABS Census</span>
             <span class="tag">Investment Analytics</span><span class="tag">DAX</span>
             <span class="tag">Risk Analysis</span>
           </div>
           <div class="project-metrics">
-            <div class="metric"><div class="metric-num">671</div><div class="metric-lbl">Suburbs</div></div>
-            <div class="metric"><div class="metric-num">10</div><div class="metric-lbl">Business Questions</div></div>
-            <div class="metric"><div class="metric-num">67%</div><div class="metric-lbl">Avg Rental Access</div></div>
+            <div class="metric"><div class="metric-num">67.1%</div><div class="metric-lbl">Avg Rental Access</div></div>
+            <div class="metric"><div class="metric-num">46.8%</div><div class="metric-lbl">Migration Footprint</div></div>
+            <div class="metric"><div class="metric-num">50.6%</div><div class="metric-lbl">Avg HMP Score</div></div>
           </div>
           <div class="project-footer">
             <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
@@ -652,9 +654,9 @@ footer {
           <div class="project-num">Project 02 · Retail Analytics</div>
           <h3 class="project-title">Woolworths Everyday Rewards — Loyalty KPI Dashboard</h3>
           <p class="project-desc">
-            Built a multi-page loyalty analytics dashboard for Woolworths Everyday Rewards program covering 10K customers, 106K transactions, and $31.19M in transaction value across Sydney stores. Includes drill-through by store location with individual store performance cards.
+            Multi-page loyalty analytics dashboard covering 10K customers, 106K transactions, and $31.19M across Sydney stores. Chatswood leads points earned at 2.860M, with Shopping Discounts driving 69.77% of all redemptions. Includes drill-through by store with individual store performance vs system average.
           </p>
-          <p class="project-question">"Which stores drive the most loyalty engagement and which customers are most at risk of redemption underperformance?"</p>
+          <p class="project-question">Key insight: Only 2.39% of points earned at Chatswood were redeemed — below the 2.48% target — suggesting customers earn but do not engage with redemption. Recommendation: targeted redemption nudge campaigns for high-earning, low-redeeming customer segments.</p>
           <div class="project-tags">
             <span class="tag">Power BI</span><span class="tag">DAX</span>
             <span class="tag">Drill-through</span><span class="tag">KPI Design</span>
@@ -683,9 +685,9 @@ footer {
           <div class="project-num">Project 03 · Sales Operations</div>
           <h3 class="project-title">KPI Consulting Services — Multi-Page Sales Intelligence</h3>
           <p class="project-desc">
-            Designed a professional multi-page Power BI report with branded navigation home page. Operational dashboard covers $14M in total sales across product categories, customer demographics (gender, occupation, age), and store-level performance with a Self Service BI page.
+            Professional multi-page Power BI report with branded navigation home page and 6 report tabs. Electronics ($12M) dominates over Clothing ($3M). Engineers are the top spending occupation at $1.68M. MacBook Pro leads product sales at $5.4M. Costco leads store performance at $3.9M.
           </p>
-          <p class="project-question">"Which customer segments and product categories drive the most revenue, and how do stores compare on key sales metrics?"</p>
+          <p class="project-question">Key insight: 30-40 age bracket drives $6.7M — the highest of any age group, nearly double the over-40 segment ($3.2M). Recommendation: marketing budget should prioritise 30-40 year old professionals, particularly Engineers and Sales Reps who show highest average spend.</p>
           <div class="project-tags">
             <span class="tag">Power BI</span><span class="tag">Navigation Design</span>
             <span class="tag">Sales Analytics</span><span class="tag">DAX</span>
@@ -694,7 +696,7 @@ footer {
           <div class="project-metrics">
             <div class="metric"><div class="metric-num">$14M</div><div class="metric-lbl">Total Sales</div></div>
             <div class="metric"><div class="metric-num">6</div><div class="metric-lbl">Report Pages</div></div>
-            <div class="metric"><div class="metric-num">36</div><div class="metric-lbl">Unique Customers</div></div>
+            <div class="metric"><div class="metric-num">$6.32K</div><div class="metric-lbl">Avg per Transaction</div></div>
           </div>
           <div class="project-footer">
             <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
@@ -714,9 +716,9 @@ footer {
           <div class="project-num">Project 04 · Advanced DAX</div>
           <h3 class="project-title">Sales Analytical Dashboard — Time Intelligence &amp; Regional Analysis</h3>
           <p class="project-desc">
-            Advanced Power BI dashboard demonstrating time intelligence capabilities across year, quarter, and month filters. Covers $14.7M in orders with provincial breakdown (British Columbia leading at $8.7M), product container analysis, shipping modes, and seasonal monthly trends.
+            Advanced Power BI dashboard with dynamic year, quarter, and month filters. British Columbia dominates at $8.7M — 4x the next province Alberta ($2.1M). Small Box containers lead at $4.6M. Returns of $1.6M represent 10.9% of gross orders — a key risk metric for management attention.
           </p>
-          <p class="project-question">"How do sales trends vary across time periods, provinces, and shipping modes — and where are the highest-value opportunities?"</p>
+          <p class="project-question">Key insight: Regular Air shipping ($6.6M) far outperforms Express Air ($6.4M) and Delivery Truck ($1.1M). Recommendation: renegotiate Express Air contracts — high cost with minimal volume advantage over Regular Air — to reduce shipping cost per order.</p>
           <div class="project-tags">
             <span class="tag">Power BI</span><span class="tag">Time Intelligence</span>
             <span class="tag">DAX</span><span class="tag">Regional Analysis</span>
@@ -724,8 +726,8 @@ footer {
           </div>
           <div class="project-metrics">
             <div class="metric"><div class="metric-num">$14.7M</div><div class="metric-lbl">Total Orders</div></div>
+            <div class="metric"><div class="metric-num">$1.6M</div><div class="metric-lbl">Returns</div></div>
             <div class="metric"><div class="metric-num">1,263</div><div class="metric-lbl">Products</div></div>
-            <div class="metric"><div class="metric-num">4yr</div><div class="metric-lbl">Time Span</div></div>
           </div>
           <div class="project-footer">
             <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
@@ -745,9 +747,9 @@ footer {
           <div class="project-num">Project 05 · Retail Operations</div>
           <h3 class="project-title">The Reject Shop — National Sales Performance Dashboard</h3>
           <p class="project-desc">
-            Built a comprehensive Australian retail analytics dashboard covering $1.83M in sales across online and physical stores. Features state-level geographic map visual, category performance, manager and buyer rankings, and online vs store channel comparison across QLD, SA, TAS, VIC and WA.
+            National retail dashboard covering $1.83M across online ($538K) and store ($1.29M) channels. Home and Garden & DIY lead categories. NSW leads state performance at $536K. Chadstone is top suburb. Store channel outperforms online 2.4x with NSW and VIC as dominant markets.
           </p>
-          <p class="project-question">"How do online and in-store channels compare across states, and which managers, buyers, and categories drive the most value?"</p>
+          <p class="project-question">Key insight: Online sales represent only 29% of total revenue despite lower overhead costs. Recommendation: invest in digital channel marketing targeting QLD and SA where online penetration is lowest relative to population — highest growth opportunity with minimal cannibalisation risk.</p>
           <div class="project-tags">
             <span class="tag">Power BI</span><span class="tag">Map Visuals</span>
             <span class="tag">Channel Analytics</span><span class="tag">DAX</span>
@@ -755,8 +757,8 @@ footer {
           </div>
           <div class="project-metrics">
             <div class="metric"><div class="metric-num">$1.83M</div><div class="metric-lbl">Total Sales</div></div>
+            <div class="metric"><div class="metric-num">$406</div><div class="metric-lbl">Avg Sale</div></div>
             <div class="metric"><div class="metric-num">8</div><div class="metric-lbl">States</div></div>
-            <div class="metric"><div class="metric-num">10+</div><div class="metric-lbl">Categories</div></div>
           </div>
           <div class="project-footer">
             <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>

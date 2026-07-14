@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abdus Samad — Data & Analytics Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ─────────────────────────────────────────────────────────────── */
+:root {
+  --navy:    #0f1f38;
+  --navy2:   #172d50;
+  --teal:    #1e6fa8;
+  --teal2:   #2e8fd4;
+  --accent:  #00c2a8;
+  --warm:    #f4f6f9;
+  --card:    #ffffff;
+  --text:    #1a1a2e;
+  --muted:   #6b7280;
+  --border:  #e5e9f0;
+  --serif:   'DM Serif Display', Georgia, serif;
+  --sans:    'Inter', system-ui, sans-serif;
+  --mono:    'JetBrains Mono', monospace;
+}
+
+/* ── RESET ──────────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--warm); color: var(--text); line-height: 1.6; }
+img  { max-width: 100%; display: block; }
+a    { text-decoration: none; color: inherit; }
+
+/* ── NAV ────────────────────────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(15,31,56,0.97);
+  backdrop-filter: blur(12px);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 40px; height: 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-brand {
+  font-family: var(--serif);
+  font-size: 18px; color: #fff; letter-spacing: 0.02em;
+}
+.nav-brand span { color: var(--accent); }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a {
+  font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.65);
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* ── HERO ───────────────────────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 60%, #0d3060 100%);
+  padding: 140px 40px 100px;
+  position: relative; overflow: hidden;
+}
+/* grid overlay */
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(46,143,212,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46,143,212,0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+}
+/* accent orb */
+.hero::after {
+  content: '';
+  position: absolute; right: -120px; top: -80px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,194,168,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1100px; margin: 0 auto;
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+}
+.hero-eyebrow {
+  font-family: var(--mono);
+  font-size: 12px; font-weight: 500;
+  color: var(--accent); letter-spacing: 0.2em;
+  text-transform: uppercase; margin-bottom: 20px;
+}
+.hero-name {
+  font-family: var(--serif);
+  font-size: clamp(48px, 6vw, 72px);
+  color: #fff; line-height: 1.05;
+  margin-bottom: 12px;
+}
+.hero-name em { color: var(--accent); font-style: italic; }
+.hero-title {
+  font-size: 18px; font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 32px; letter-spacing: 0.03em;
+}
+.hero-desc {
+  font-size: 15px; color: rgba(255,255,255,0.75);
+  line-height: 1.75; margin-bottom: 40px; max-width: 480px;
+}
+.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--accent); color: var(--navy);
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 14px 28px; border-radius: 4px;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,194,168,0.35); }
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.8);
+  font-size: 13px; font-weight: 500;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  padding: 14px 28px; border-radius: 4px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* hero stats */
+.hero-stats {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.stat-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 24px;
+  backdrop-filter: blur(8px);
+}
+.stat-num {
+  font-family: var(--serif);
+  font-size: 36px; color: var(--accent);
+  line-height: 1; margin-bottom: 6px;
+}
+.stat-lbl {
+  font-size: 12px; font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase; letter-spacing: 0.12em;
+}
+
+/* ── SKILLS STRIP ───────────────────────────────────────────────────────── */
+.skills-strip {
+  background: var(--navy);
+  padding: 20px 40px;
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.skill-tag {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.7);
+  font-family: var(--mono); font-size: 11px;
+  padding: 6px 14px; border-radius: 20px;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, color 0.2s;
+}
+.skill-tag:hover { background: rgba(0,194,168,0.15); color: var(--accent); }
+
+/* ── SECTION WRAPPER ────────────────────────────────────────────────────── */
+section { padding: 80px 40px; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px; font-weight: 500;
+  color: var(--teal); letter-spacing: 0.25em;
+  text-transform: uppercase; margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 42px);
+  color: var(--navy); line-height: 1.1;
+  margin-bottom: 16px;
+}
+.section-sub {
+  font-size: 15px; color: var(--muted);
+  max-width: 560px; line-height: 1.7;
+  margin-bottom: 56px;
+}
+
+/* ── ABOUT ──────────────────────────────────────────────────────────────── */
+#about { background: var(--card); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start;
+}
+.about-text p {
+  font-size: 15px; color: #374151;
+  line-height: 1.8; margin-bottom: 16px;
+}
+.about-text strong { color: var(--navy); }
+.about-highlights { display: flex; flex-direction: column; gap: 16px; }
+.highlight-item {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px; border-radius: 8px;
+  background: var(--warm);
+  border-left: 3px solid var(--accent);
+}
+.hi-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+.hi-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+.hi-body  { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+/* ── PROJECTS ───────────────────────────────────────────────────────────── */
+#projects { background: var(--warm); }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 28px;
+}
+.project-card {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex; flex-direction: column;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(15,31,56,0.12);
+}
+.project-img {
+  width: 100%; aspect-ratio: 16/9;
+  overflow: hidden; position: relative;
+  background: var(--navy);
+}
+.project-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+.project-card:hover .project-img img { transform: scale(1.04); }
+.project-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(15,31,56,0.7));
+}
+.project-sector {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--accent); color: var(--navy);
+  font-size: 10px; font-weight: 700;
+  padding: 4px 10px; border-radius: 20px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.project-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.project-num {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--teal); letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.project-title {
+  font-family: var(--serif);
+  font-size: 20px; color: var(--navy);
+  line-height: 1.2; margin-bottom: 10px;
+}
+.project-desc {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.7; margin-bottom: 16px; flex: 1;
+}
+.project-question {
+  font-size: 12px; font-style: italic;
+  color: var(--teal); margin-bottom: 16px;
+  padding: 10px 14px;
+  background: rgba(30,111,168,0.06);
+  border-left: 2px solid var(--teal);
+  border-radius: 0 4px 4px 0;
+}
+.project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.tag {
+  font-family: var(--mono); font-size: 10px;
+  color: var(--teal2); background: rgba(30,111,168,0.08);
+  padding: 4px 10px; border-radius: 20px; border: 1px solid rgba(30,111,168,0.15);
+}
+.project-metrics {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 8px; margin-bottom: 20px;
+}
+.metric {
+  text-align: center; padding: 10px 6px;
+  background: var(--warm); border-radius: 6px;
+}
+.metric-num { font-family: var(--serif); font-size: 18px; color: var(--navy); line-height: 1; }
+.metric-lbl { font-size: 10px; color: var(--muted); margin-top: 3px; letter-spacing: 0.05em; }
+.project-footer {
+  display: flex; gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+.proj-btn {
+  flex: 1; text-align: center;
+  font-size: 12px; font-weight: 600;
+  padding: 10px; border-radius: 6px;
+  letter-spacing: 0.05em; transition: all 0.15s;
+}
+.proj-btn-primary {
+  background: var(--navy); color: #fff;
+}
+.proj-btn-primary:hover { background: var(--teal); }
+.proj-btn-ghost {
+  border: 1px solid var(--border); color: var(--muted);
+}
+.proj-btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+/* featured card spans 2 cols */
+.project-card.featured {
+  grid-column: span 2;
+  display: grid; grid-template-columns: 1.2fr 1fr;
+}
+.project-card.featured .project-img {
+  aspect-ratio: unset; height: 100%; min-height: 280px;
+}
+.project-card.featured .project-metrics {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── EXPERIENCE ──────────────────────────────────────────────────────────── */
+#experience { background: var(--card); }
+.exp-timeline { display: flex; flex-direction: column; gap: 0; }
+.exp-item {
+  display: grid; grid-template-columns: 160px 1fr;
+  gap: 32px; padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.exp-item::before {
+  content: '';
+  position: absolute; left: 148px; top: 40px; bottom: -1px;
+  width: 1px; background: var(--border);
+}
+.exp-item:last-child { border-bottom: none; }
+.exp-item:last-child::before { display: none; }
+.exp-date {
+  font-family: var(--mono); font-size: 11px;
+  color: var(--muted); letter-spacing: 0.08em;
+  padding-top: 4px; text-align: right;
+}
+.exp-dot {
+  position: absolute; left: 142px; top: 40px;
+  width: 13px; height: 13px;
+  border-radius: 50%; background: var(--accent);
+  border: 2px solid var(--card);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+.exp-role {
+  font-size: 16px; font-weight: 700; color: var(--navy);
+  margin-bottom: 3px;
+}
+.exp-org {
+  font-size: 13px; color: var(--teal); font-weight: 500;
+  margin-bottom: 12px;
+}
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.exp-bullets li {
+  font-size: 13px; color: #4b5563;
+  line-height: 1.6; padding-left: 16px; position: relative;
+}
+.exp-bullets li::before {
+  content: '→';
+  position: absolute; left: 0;
+  color: var(--accent); font-size: 11px; top: 3px;
+}
+
+/* ── CONTACT ─────────────────────────────────────────────────────────────── */
+#contact {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy2) 100%);
+  position: relative; overflow: hidden;
+}
+#contact::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(0,194,168,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,194,168,0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+#contact .section-title { color: #fff; }
+#contact .section-sub   { color: rgba(255,255,255,0.55); }
+#contact .section-label { color: var(--accent); }
+.contact-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+  max-width: 640px;
+}
+.contact-item {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px; padding: 20px;
+  display: flex; align-items: center; gap: 14px;
+  transition: background 0.2s, border-color 0.2s;
+}
+.contact-item:hover {
+  background: rgba(0,194,168,0.1);
+  border-color: rgba(0,194,168,0.3);
+}
+.ci-icon { font-size: 20px; }
+.ci-label { font-size: 10px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 2px; }
+.ci-val   { font-size: 13px; color: rgba(255,255,255,0.85); font-weight: 500; }
+
+/* ── FOOTER ──────────────────────────────────────────────────────────────── */
+footer {
+  background: #080f1e; padding: 28px 40px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); font-family: var(--mono); }
+.footer-copy span { color: var(--accent); }
+
+/* ── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-inner        { grid-template-columns: 1fr; }
+  .hero-stats        { display: none; }
+  .about-grid        { grid-template-columns: 1fr; }
+  .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+  .project-card.featured .project-img { height: 220px; }
+  .contact-grid      { grid-template-columns: 1fr 1fr; }
+  .exp-item          { grid-template-columns: 1fr; }
+  .exp-item::before, .exp-dot { display: none; }
+  .exp-date          { text-align: left; }
+}
+@media (max-width: 600px) {
+  nav { padding: 0 20px; }
+  nav .nav-links { gap: 16px; }
+  section { padding: 60px 20px; }
+  .hero   { padding: 100px 20px 70px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .contact-grid  { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">Abdus <span>Samad</span></div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">// Data &amp; Analytics Portfolio</div>
+      <h1 class="hero-name">Abdus<br><em>Samad</em></h1>
+      <p class="hero-title">Data Analyst · Power BI · Python · Local Government</p>
+      <p class="hero-desc">
+        Master of Business Analytics graduate building analytics solutions
+        that turn complex datasets into decisions. Specialising in Power BI
+        dashboards, Python automation, and strategic performance reporting
+        for local government and commercial sectors across Australia.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact"  class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-num">7+</div>
+        <div class="stat-lbl">End-to-end Dashboards Built</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">118K+</div>
+        <div class="stat-lbl">Records Analysed at Mundaring</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">671</div>
+        <div class="stat-lbl">Suburbs in Demografy KPI Model</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5</div>
+        <div class="stat-lbl">Industries Covered</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS STRIP -->
+<div class="skills-strip">
+  <span class="skill-tag">Power BI</span>
+  <span class="skill-tag">DAX</span>
+  <span class="skill-tag">Power Query / M</span>
+  <span class="skill-tag">Python</span>
+  <span class="skill-tag">Pandas</span>
+  <span class="skill-tag">Scikit-learn</span>
+  <span class="skill-tag">NLTK / NLP</span>
+  <span class="skill-tag">SQL</span>
+  <span class="skill-tag">Excel</span>
+  <span class="skill-tag">IPRF Framework</span>
+  <span class="skill-tag">KPI Design</span>
+  <span class="skill-tag">ABS Data</span>
+  <span class="skill-tag">GitHub</span>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <div class="section-label">// About Me</div>
+        <h2 class="section-title">Turning data into decisions that matter</h2>
+        <div class="about-text">
+          <p>
+            I'm a Perth-based Data & Analytics professional with a
+            <strong>Master of Business Analytics from Kaplan Business School</strong>
+            and hands-on experience delivering end-to-end analytics solutions
+            across local government, retail, and property sectors.
+          </p>
+          <p>
+            At the <strong>Shire of Mundaring</strong> I built performance dashboards
+            across 118,000+ customer service records, developed an NLP-based
+            classification tool in Python, and produced workforce and operational
+            analytics that directly informed management decisions.
+          </p>
+          <p>
+            At <strong>Demografy</strong> I built suburb intelligence dashboards using
+            ABS Census data to help Australian homebuyers and investors make
+            evidence-based property decisions across 671 suburbs nationally.
+          </p>
+          <p>
+            I'm particularly interested in roles where analytics connects to
+            strategic planning — local government, public sector, and organisations
+            that make data-driven decisions at scale.
+          </p>
+        </div>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item">
+          <div class="hi-icon">🏛️</div>
+          <div>
+            <div class="hi-title">Local Government Analytics</div>
+            <div class="hi-body">Experience with WA IPRF framework, Section 5.56 Local Government Act 1995, MARKYT Community Scorecard, and FUTYR methodology — rare capability in the analyst market.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon">📊</div>
+          <div>
+            <div class="hi-title">Power BI & DAX</div>
+            <div class="hi-body">End-to-end dashboard development including data modelling, advanced DAX measures, time intelligence, drill-through pages, and published reports with row-level security.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon">🐍</div>
+          <div>
+            <div class="hi-title">Python & Machine Learning</div>
+            <div class="hi-body">NLP text classification, attrition prediction models, predictive maintenance classifiers, and data pipeline automation using pandas, scikit-learn, and NLTK.</div>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hi-icon">🎓</div>
+          <div>
+            <div class="hi-title">Master of Business Analytics</div>
+            <div class="hi-body">Kaplan Business School, Perth WA — completed 2026. Key courses: Quantitative Methods (HD), Data Visualisation (D), Data Acquisition & Management (D).</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">// Featured Work</div>
+    <h2 class="section-title">Analytics Projects</h2>
+    <p class="section-sub">End-to-end analytics projects spanning retail loyalty, property intelligence, sales operations, and local government — each built from raw data to executive-ready insights.</p>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1a — Demografy Home Buyers -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="img/demografy-homebuyers.png" alt="Demografy Property Insights for Home Buyers Dashboard">
+          <div class="project-img-overlay"></div>
+          <div class="project-sector">Current Role</div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">Project 01a · Demografy</div>
+          <h3 class="project-title">Property Insights for Home Buyers — Suburb KPI Dashboard</h3>
+          <p class="project-desc">
+            Built for Demografy's suburb intelligence product during my current internship. Analyses 671 Australian suburbs across 8 KPI dimensions including livability, community stability, affordability, and education level — helping homebuyers identify the right suburb for their lifestyle and budget.
+          </p>
+          <p class="project-question">"Where are the most stable family communities, blue-chip suburbs, and affordable entry points for first home buyers across Australia?"</p>
+          <div class="project-tags">
+            <span class="tag">Power BI</span><span class="tag">ABS Census</span>
+            <span class="tag">KPI Framework</span><span class="tag">DAX</span>
+            <span class="tag">Property Analytics</span>
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-num">671</div><div class="metric-lbl">Suburbs</div></div>
+            <div class="metric"><div class="metric-num">10</div><div class="metric-lbl">Business Questions</div></div>
+            <div class="metric"><div class="metric-num">8+</div><div class="metric-lbl">KPI Dimensions</div></div>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="#" class="proj-btn proj-btn-ghost">Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 1b — Demografy Investors -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="img/demografy-investors.png" alt="Demografy Property Insights for Investors Dashboard">
+          <div class="project-img-overlay"></div>
+          <div class="project-sector">Current Role</div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">Project 01b · Demografy</div>
+          <h3 class="project-title">Property Insights for Investors — Capital Growth &amp; Risk Dashboard</h3>
+          <p class="project-desc">
+            Second Demografy dashboard targeting property investors. Covers gentrification signals, international migration demand, cashflow vs blue-chip zones, secure tenant profiling, and high-yield low-entry-cost opportunities — built on the same ABS-powered KPI framework.
+          </p>
+          <p class="project-question">"Which suburbs show early gentrification signals, offer the best cashflow yield, or represent undervalued educated markets for capital growth?"</p>
+          <div class="project-tags">
+            <span class="tag">Power BI</span><span class="tag">ABS Census</span>
+            <span class="tag">Investment Analytics</span><span class="tag">DAX</span>
+            <span class="tag">Risk Analysis</span>
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-num">671</div><div class="metric-lbl">Suburbs</div></div>
+            <div class="metric"><div class="metric-num">10</div><div class="metric-lbl">Business Questions</div></div>
+            <div class="metric"><div class="metric-num">67%</div><div class="metric-lbl">Avg Rental Access</div></div>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="#" class="proj-btn proj-btn-ghost">Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 — Woolworths -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="img/woolworths-loyalty.png" alt="Woolworths Everyday Rewards Loyalty KPI Dashboard">
+          <div class="project-img-overlay"></div>
+          <div class="project-sector">Retail</div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">Project 02 · Retail Analytics</div>
+          <h3 class="project-title">Woolworths Everyday Rewards — Loyalty KPI Dashboard</h3>
+          <p class="project-desc">
+            Built a multi-page loyalty analytics dashboard for Woolworths Everyday Rewards program covering 10K customers, 106K transactions, and $31.19M in transaction value across Sydney stores. Includes drill-through by store location with individual store performance cards.
+          </p>
+          <p class="project-question">"Which stores drive the most loyalty engagement and which customers are most at risk of redemption underperformance?"</p>
+          <div class="project-tags">
+            <span class="tag">Power BI</span><span class="tag">DAX</span>
+            <span class="tag">Drill-through</span><span class="tag">KPI Design</span>
+            <span class="tag">Retail Analytics</span>
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-num">10K</div><div class="metric-lbl">Customers</div></div>
+            <div class="metric"><div class="metric-num">106K</div><div class="metric-lbl">Transactions</div></div>
+            <div class="metric"><div class="metric-num">$31M</div><div class="metric-lbl">Revenue</div></div>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="#" class="proj-btn proj-btn-ghost">Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3 — KPI Consulting -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="img/kpi-consulting.png" alt="KPI Consulting Services Operational Dashboard">
+          <div class="project-img-overlay"></div>
+          <div class="project-sector">Sales Analytics</div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">Project 03 · Sales Operations</div>
+          <h3 class="project-title">KPI Consulting Services — Multi-Page Sales Intelligence</h3>
+          <p class="project-desc">
+            Designed a professional multi-page Power BI report with branded navigation home page. Operational dashboard covers $14M in total sales across product categories, customer demographics (gender, occupation, age), and store-level performance with a Self Service BI page.
+          </p>
+          <p class="project-question">"Which customer segments and product categories drive the most revenue, and how do stores compare on key sales metrics?"</p>
+          <div class="project-tags">
+            <span class="tag">Power BI</span><span class="tag">Navigation Design</span>
+            <span class="tag">Sales Analytics</span><span class="tag">DAX</span>
+            <span class="tag">Self-Service BI</span>
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-num">$14M</div><div class="metric-lbl">Total Sales</div></div>
+            <div class="metric"><div class="metric-num">6</div><div class="metric-lbl">Report Pages</div></div>
+            <div class="metric"><div class="metric-num">36</div><div class="metric-lbl">Unique Customers</div></div>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="#" class="proj-btn proj-btn-ghost">Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4 — Sales Analytical -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="img/sales-analytical.png" alt="Sales Analytical Dashboard with Time Intelligence">
+          <div class="project-img-overlay"></div>
+          <div class="project-sector">Time Intelligence</div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">Project 04 · Advanced DAX</div>
+          <h3 class="project-title">Sales Analytical Dashboard — Time Intelligence &amp; Regional Analysis</h3>
+          <p class="project-desc">
+            Advanced Power BI dashboard demonstrating time intelligence capabilities across year, quarter, and month filters. Covers $14.7M in orders with provincial breakdown (British Columbia leading at $8.7M), product container analysis, shipping modes, and seasonal monthly trends.
+          </p>
+          <p class="project-question">"How do sales trends vary across time periods, provinces, and shipping modes — and where are the highest-value opportunities?"</p>
+          <div class="project-tags">
+            <span class="tag">Power BI</span><span class="tag">Time Intelligence</span>
+            <span class="tag">DAX</span><span class="tag">Regional Analysis</span>
+            <span class="tag">Advanced Filtering</span>
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-num">$14.7M</div><div class="metric-lbl">Total Orders</div></div>
+            <div class="metric"><div class="metric-num">1,263</div><div class="metric-lbl">Products</div></div>
+            <div class="metric"><div class="metric-num">4yr</div><div class="metric-lbl">Time Span</div></div>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="#" class="proj-btn proj-btn-ghost">Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 5 — Reject Shop -->
+      <div class="project-card">
+        <div class="project-img">
+          <img src="img/reject-shop.png" alt="The Reject Shop Sales Dashboard">
+          <div class="project-img-overlay"></div>
+          <div class="project-sector">Australian Retail</div>
+        </div>
+        <div class="project-body">
+          <div class="project-num">Project 05 · Retail Operations</div>
+          <h3 class="project-title">The Reject Shop — National Sales Performance Dashboard</h3>
+          <p class="project-desc">
+            Built a comprehensive Australian retail analytics dashboard covering $1.83M in sales across online and physical stores. Features state-level geographic map visual, category performance, manager and buyer rankings, and online vs store channel comparison across QLD, SA, TAS, VIC and WA.
+          </p>
+          <p class="project-question">"How do online and in-store channels compare across states, and which managers, buyers, and categories drive the most value?"</p>
+          <div class="project-tags">
+            <span class="tag">Power BI</span><span class="tag">Map Visuals</span>
+            <span class="tag">Channel Analytics</span><span class="tag">DAX</span>
+            <span class="tag">Australian Retail</span>
+          </div>
+          <div class="project-metrics">
+            <div class="metric"><div class="metric-num">$1.83M</div><div class="metric-lbl">Total Sales</div></div>
+            <div class="metric"><div class="metric-num">8</div><div class="metric-lbl">States</div></div>
+            <div class="metric"><div class="metric-num">10+</div><div class="metric-lbl">Categories</div></div>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="#" class="proj-btn proj-btn-ghost">Screenshots</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <div class="section-label">// Work History</div>
+    <h2 class="section-title">Experience</h2>
+    <p class="section-sub">Analytics and data roles across local government, property technology, and research sectors in Perth WA.</p>
+
+    <div class="exp-timeline">
+
+      <div class="exp-item">
+        <div class="exp-date">Current<br>2026</div>
+        <div>
+          <div class="exp-dot"></div>
+          <div class="exp-role">Data &amp; Insights Analyst</div>
+          <div class="exp-org">Demografy · Perth, WA</div>
+          <ul class="exp-bullets">
+            <li>Built suburb intelligence dashboards across 671 Australian suburbs using ABS Census 2021 data, covering affordability, livability, gentrification, and rental performance indicators</li>
+            <li>Designed and implemented a standardised KPI framework in Excel and Power BI enabling homebuyers and investors to make evidence-based property decisions</li>
+            <li>Produced two production-ready Power BI dashboards — one for homebuyers and one for investors — addressing 20 structured business questions from the project brief</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Nov 2025<br>Feb 2026</div>
+        <div>
+          <div class="exp-dot"></div>
+          <div class="exp-role">Business Improvement Analyst</div>
+          <div class="exp-org">Shire of Mundaring · Perth, WA</div>
+          <ul class="exp-bullets">
+            <li>Analysed 118,000+ customer service records in Power BI, building KPI dashboards tracking SLA compliance, response times, and departmental performance across the organisation</li>
+            <li>Built a Python NLP classification tool that reduced unclassified customer requests, giving management their first accurate picture of service demand patterns and root causes</li>
+            <li>Produced the Employee Engagement Survey analysis — cleaned and validated responses, developed weighted performance scores, and identified 3 critical organisational themes including correlation between role clarity and skill utilisation</li>
+            <li>Delivered workforce planning analytics including leave trend dashboards, reception performance forecasting, and animal registration behaviour analysis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Nov 2023<br>Feb 2024</div>
+        <div>
+          <div class="exp-dot"></div>
+          <div class="exp-role">Expert Relations Management Analyst</div>
+          <div class="exp-org">Insights Driven Research (IDR) · Lahore, Pakistan</div>
+          <ul class="exp-bullets">
+            <li>Led a team of 5 analysts delivering client reporting under tight deadlines</li>
+            <li>Redesigned internal scheduling workflow improving efficiency by approximately 25%</li>
+            <li>Managed structured datasets in Excel to support reporting, analytics, and operational workflows</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">Oct 2022<br>Jul 2023</div>
+        <div>
+          <div class="exp-dot"></div>
+          <div class="exp-role">Research Associate</div>
+          <div class="exp-org">LUMS (Lahore University of Management Sciences)</div>
+          <ul class="exp-bullets">
+            <li>Conducted behavioural research on food service establishments under faculty supervision</li>
+            <li>Performed sentiment and exploratory data analysis using Python on US Census and public data sources</li>
+            <li>Collected and organised large datasets that shaped the direction of faculty research</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner" style="position:relative;z-index:1">
+    <div class="section-label">// Get in Touch</div>
+    <h2 class="section-title">Open to opportunities<br>in Perth &amp; Regional WA</h2>
+    <p class="section-sub">Available for data analyst, business improvement, corporate planning, and performance reporting roles across local government, state government, mining, and analytics sectors.</p>
+    <div class="contact-grid">
+      <a href="mailto:abdus.samadbiz@gmail.com" class="contact-item">
+        <div class="ci-icon">✉️</div>
+        <div>
+          <div class="ci-label">Email</div>
+          <div class="ci-val">abdus.samadbiz<br>@gmail.com</div>
+        </div>
+      </a>
+      <a href="tel:0431986005" class="contact-item">
+        <div class="ci-icon">📱</div>
+        <div>
+          <div class="ci-label">Phone</div>
+          <div class="ci-val">0431 986 005</div>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/abdus22" target="_blank" class="contact-item">
+        <div class="ci-icon">💼</div>
+        <div>
+          <div class="ci-label">LinkedIn</div>
+          <div class="ci-val">linkedin.com/in/abdus22</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-copy">© 2026 <span>Abdus Samad</span> · Perth, Western Australia</div>
+  <div class="footer-copy">Built with HTML · Hosted on <span>GitHub Pages</span></div>
+</footer>
+
+</body>
+</html>

@@ -537,12 +537,12 @@ footer {
     <div>
       <div class="hero-eyebrow">// Data &amp; Analytics Portfolio</div>
       <h1 class="hero-name">Abdus<br><em>Samad</em></h1>
-      <p class="hero-title">Data Analyst · Power BI · Python · Local Government</p>
+      <p class="hero-title">Data Analyst · Power BI · Python · SQL · Local Government · Learning Analytics</p>
       <p class="hero-desc">
-        Master of Business Analytics graduate building analytics solutions
+        Master of Business Analytics graduate building end-to-end analytics solutions
         that turn complex datasets into decisions. Specialising in Power BI
-        dashboards, Python automation, and strategic performance reporting
-        for local government and commercial sectors across Australia.
+        dashboards, SQL, Python automation, and performance reporting across
+        local government, property intelligence, and learning analytics sectors in Australia.
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn-primary">View Projects</a>
@@ -580,10 +580,12 @@ footer {
   <span class="skill-tag">Scikit-learn</span>
   <span class="skill-tag">NLTK / NLP</span>
   <span class="skill-tag">SQL</span>
+  <span class="skill-tag">BigQuery</span>
   <span class="skill-tag">Excel</span>
   <span class="skill-tag">IPRF Framework</span>
   <span class="skill-tag">KPI Design</span>
   <span class="skill-tag">ABS Data</span>
+  <span class="skill-tag">Process Improvement</span>
   <span class="skill-tag">GitHub</span>
 </div>
 
@@ -599,23 +601,26 @@ footer {
             I'm a Perth-based Data & Analytics professional with a
             <strong>Master of Business Analytics from Kaplan Business School</strong>
             and hands-on experience delivering end-to-end analytics solutions
-            across local government, retail, and property sectors.
+            across local government, property intelligence, and data analytics sectors.
           </p>
           <p>
             At the <strong>Shire of Mundaring</strong> I built performance dashboards
             across 118,000+ customer service records, developed an NLP-based
-            classification tool in Python, and produced workforce and operational
-            analytics that directly informed management decisions.
+            classification tool in Python that automated manual categorisation processes,
+            and produced workforce and operational analytics that directly informed
+            management decisions — including identifying patterns that supported
+            continuous improvement across service delivery.
           </p>
           <p>
-            At <strong>Demografy</strong> I built suburb intelligence dashboards using
-            ABS Census data to help Australian homebuyers and investors make
-            evidence-based property decisions across 671 suburbs nationally.
+            At <strong>Demografy</strong> I am currently building 4 new KPIs in BigQuery SQL
+            across ABS Census tables, extending a 14-KPI Master Table, and validating
+            insights through a stakeholder-facing Power BI dashboard addressing
+            10 business questions across investor, homebuyer, and policy officer audiences.
           </p>
           <p>
-            I'm particularly interested in roles where analytics connects to
-            strategic planning — local government, public sector, and organisations
-            that make data-driven decisions at scale.
+            I thrive in roles that combine data analysis, dashboard reporting, process
+            automation, and cross-functional stakeholder collaboration — particularly
+            where insights drive measurable improvement in program or operational performance.
           </p>
         </div>
       </div>
@@ -662,7 +667,72 @@ footer {
 
     <div class="projects-grid">
 
-      <!-- PROJECT 1a — Demografy Home Buyers -->
+      <!-- PROJECT VANTAGE — Demografy Current Project -->
+      <div class="project-card" style="grid-column: 1 / -1; background: linear-gradient(135deg, #0f1f38 0%, #172d50 100%); border-color: rgba(0,194,168,0.3);">
+        <div class="project-img" style="background: #0a1628; min-height: 320px;">
+          <div style="display:flex; align-items:center; justify-content:center; height:100%; flex-direction:column; gap:16px; padding:32px;">
+            <div style="font-size:48px;">⚙️</div>
+            <div style="font-family:'DM Serif Display',serif; font-size:28px; color:#fff; text-align:center; line-height:1.2;">KPI Framework Expansion</div>
+            <div style="font-size:13px; color:rgba(0,194,168,0.9); letter-spacing:0.15em; text-transform:uppercase; text-align:center;">In Progress · BigQuery SQL + Power BI</div>
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:12px; width:100%; max-width:480px; margin-top:8px;">
+              <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px; text-align:center;">
+                <div style="font-size:18px; font-weight:900; color:#00c2a8;">SQL</div>
+                <div style="font-size:10px; color:rgba(255,255,255,0.5); margin-top:4px;">BigQuery<br>Queries</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px; text-align:center;">
+                <div style="font-size:18px; font-weight:900; color:#00c2a8;">KPI</div>
+                <div style="font-size:10px; color:rgba(255,255,255,0.5); margin-top:4px;">Framework<br>Design</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px; text-align:center;">
+                <div style="font-size:18px; font-weight:900; color:#00c2a8;">ABS</div>
+                <div style="font-size:10px; color:rgba(255,255,255,0.5); margin-top:4px;">Census<br>Tables</div>
+              </div>
+              <div style="background:rgba(255,255,255,0.07); border-radius:8px; padding:12px; text-align:center;">
+                <div style="font-size:18px; font-weight:900; color:#00c2a8">Power BI</div>
+                <div style="font-size:10px; color:rgba(255,255,255,0.5); margin-top:4px;">Validation<br>Dashboard</div>
+              </div>
+            </div>
+          </div>
+          <div class="project-sector" style="background:rgba(0,194,168,0.9); color:#0f1f38;">In Progress</div>
+        </div>
+        <div class="project-body" style="background:transparent;">
+          <div class="project-num" style="color:#00c2a8;">Current Project · Demografy · BigQuery SQL + Power BI</div>
+          <h3 class="project-title" style="color:#fff; font-size:24px;">KPI Framework Expansion — Suburb Intelligence Platform</h3>
+          <p class="project-desc" style="color:rgba(255,255,255,0.7);">
+            Extending a production KPI framework using GCP BigQuery SQL across multiple ABS Census tables. Building and validating new KPI metrics, integrating them into a Master Table joinable by geographic code, and producing a stakeholder-facing Power BI dashboard addressing structured business questions across investor, homebuyer, and policy officer audiences.
+          </p>
+          <div class="project-metrics" style="border-color:rgba(255,255,255,0.1);">
+            <div class="metric" style="background:rgba(255,255,255,0.06);">
+              <div class="metric-num" style="color:#00c2a8;">SQL</div>
+              <div class="metric-lbl" style="color:rgba(255,255,255,0.45);">BigQuery</div>
+            </div>
+            <div class="metric" style="background:rgba(255,255,255,0.06);">
+              <div class="metric-num" style="color:#00c2a8;">ABS</div>
+              <div class="metric-lbl" style="color:rgba(255,255,255,0.45);">Census Data</div>
+            </div>
+            <div class="metric" style="background:rgba(255,255,255,0.06);">
+              <div class="metric-num" style="color:#00c2a8;">Power BI</div>
+              <div class="metric-lbl" style="color:rgba(255,255,255,0.45);">Dashboard</div>
+            </div>
+          </div>
+          <div class="project-insight" style="background:rgba(0,194,168,0.08); border-color:#00c2a8;">
+            <div class="project-insight-label" style="color:#00c2a8;">🔧 What I am building</div>
+            <div class="project-insight-text" style="color:rgba(255,255,255,0.8);">Designing and validating new KPI metrics in BigQuery SQL using multi-table joins across ABS Census datasets. Integrating new metrics into an existing production Master Table, then building a Power BI dashboard to validate each KPI through stakeholder business questions. Full methodology and SQL are confidential to the client.</div>
+          </div>
+          <div class="project-tags">
+            <span class="tag" style="color:#00c2a8; border-color:rgba(0,194,168,0.3); background:rgba(0,194,168,0.08);">BigQuery SQL</span>
+            <span class="tag" style="color:#00c2a8; border-color:rgba(0,194,168,0.3); background:rgba(0,194,168,0.08);">GCP</span>
+            <span class="tag" style="color:#00c2a8; border-color:rgba(0,194,168,0.3); background:rgba(0,194,168,0.08);">Power BI</span>
+            <span class="tag" style="color:#00c2a8; border-color:rgba(0,194,168,0.3); background:rgba(0,194,168,0.08);">ABS Census</span>
+            <span class="tag" style="color:#00c2a8; border-color:rgba(0,194,168,0.3); background:rgba(0,194,168,0.08);">KPI Design</span>
+            <span class="tag" style="color:#00c2a8; border-color:rgba(0,194,168,0.3); background:rgba(0,194,168,0.08);">Geographic Analysis</span>
+          </div>
+          <div class="project-footer">
+            <a href="https://github.com/Abdus56/Abdus56.github.io/tree/main/img" target="_blank" class="proj-btn proj-btn-primary" style="background:#00c2a8; color:#0f1f38;">View GitHub</a>
+            <span class="proj-btn proj-btn-ghost" style="border-color:rgba(0,194,168,0.3); color:rgba(255,255,255,0.5); cursor:default;">Dashboard coming soon</span>
+          </div>
+        </div>
+      </div>
       <div class="project-card">
         <div class="project-img">
           <img src="img/demografy-homebuyers.png" alt="Demografy Property Insights for Home Buyers">
@@ -686,7 +756,7 @@ footer {
             <span class="tag">Power BI</span><span class="tag">ABS Census</span><span class="tag">KPI Framework</span><span class="tag">DAX</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="https://github.com/Abdus56/Abdus56.github.io/tree/main/img" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
           </div>
         </div>
       </div>
@@ -715,7 +785,7 @@ footer {
             <span class="tag">Power BI</span><span class="tag">ABS Census</span><span class="tag">Investment Analytics</span><span class="tag">Risk Analysis</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="https://github.com/Abdus56/Abdus56.github.io/tree/main/img" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
           </div>
         </div>
       </div>
@@ -744,7 +814,7 @@ footer {
             <span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">Drill-through</span><span class="tag">KPI Design</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="https://github.com/Abdus56/Abdus56.github.io/tree/main/img" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
           </div>
         </div>
       </div>
@@ -773,7 +843,7 @@ footer {
             <span class="tag">Power BI</span><span class="tag">Navigation Design</span><span class="tag">DAX</span><span class="tag">Self-Service BI</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="https://github.com/Abdus56/Abdus56.github.io/tree/main/img" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
           </div>
         </div>
       </div>
@@ -802,7 +872,7 @@ footer {
             <span class="tag">Power BI</span><span class="tag">Time Intelligence</span><span class="tag">DAX</span><span class="tag">Regional Analysis</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="https://github.com/Abdus56/Abdus56.github.io/tree/main/img" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
           </div>
         </div>
       </div>
@@ -831,7 +901,7 @@ footer {
             <span class="tag">Power BI</span><span class="tag">Map Visuals</span><span class="tag">Channel Analytics</span><span class="tag">DAX</span>
           </div>
           <div class="project-footer">
-            <a href="https://github.com/Abdus56" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
+            <a href="https://github.com/Abdus56/Abdus56.github.io/tree/main/img" target="_blank" class="proj-btn proj-btn-primary">View on GitHub</a>
           </div>
         </div>
       </div>
@@ -914,8 +984,8 @@ footer {
 <section id="contact">
   <div class="section-inner" style="position:relative;z-index:1">
     <div class="section-label">// Get in Touch</div>
-    <h2 class="section-title">Open to opportunities<br>in Perth &amp; Regional WA</h2>
-    <p class="section-sub">Available for data analyst, business improvement, corporate planning, and performance reporting roles across local government, state government, mining, and analytics sectors.</p>
+    <h2 class="section-title">Open to opportunities<br>across Perth &amp; Australia</h2>
+    <p class="section-sub">Available for Data Analyst, Junior Data Analyst, Business Improvement Analyst, Corporate Planning, and Performance Reporting roles — permanent or contract — across local government, analytics, learning, and public sector organisations.</p>
     <div class="contact-grid">
       <a href="mailto:abdus.samadbiz@gmail.com" class="contact-item">
         <div class="ci-icon">✉️</div>

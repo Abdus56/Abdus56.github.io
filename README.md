@@ -106,7 +106,7 @@ Comprehensive Australian retail dashboard covering $1.83M in sales across online
 ## Work Experience
 
 **Data & Insights Analyst** · Demografy · Perth, WA · 2026–Present
-> Building suburb intelligence dashboards using ABS Census data. Designed KPI framework covering 671 Australian suburbs across affordability, livability, and investment performance indicators.
+> Building suburb intelligence dashboards using ABS Census data. Designed KPI framework covering 671 Australian suburbs across affordability, livability, and investment performance indicators. Currently extending the production KPI framework using GCP BigQuery SQL across multiple ABS Census tables — building new KPI metrics, integrating them into a Master Table joinable by geographic code, and validating through a stakeholder-facing Power BI dashboard addressing business questions across investor, homebuyer, and policy officer audiences. Full methodology confidential to client.
 
 **Business Improvement Analyst** · Shire of Mundaring · Perth, WA · Nov 2025–Feb 2026
 > Built Power BI dashboards across 118,000+ customer records tracking SLA compliance, response times, and service performance. Developed Python NLP classification tool to improve reporting accuracy. Delivered employee engagement survey analysis, workforce planning dashboards, and reception performance forecasting.
@@ -131,6 +131,7 @@ CGPA: 3.28/4 · Key courses: Econometrics, Finance, Statistics, Macro & Microeco
 
 ## Certifications
 
+- **Full-Stack Data Professional (FSDP)** — The Data Analytics Institute (Jul 2026) · Credential ID: 6a48e799d9cb9bb7180d841c · Covering Data Analytics, Data Engineering, and AI · Skills: KPI Dashboards, Python, and +4 skills
 - Business Analysis Foundation — LinkedIn Learning (2025)
 - Data Science & AI Bootcamp — Atomcamp (2023)
 - Lean Six Sigma Foundation — LinkedIn Learning (2023)
@@ -150,4 +151,4 @@ Specific expertise relevant to WA local government analytics roles:
 
 ---
 
-*Open to Data Analyst, Business Improvement Analyst, Corporate Planning Officer, Strategy and Performance Coordinator, and Power BI Analyst roles across Perth metro, regional WA, and anywhere in Australia.*
+*Open to Data Analyst, Junior Data Analyst, Business Improvement Analyst, Corporate Planning Officer, Strategy and Performance Coordinator, and Power BI Analyst roles — permanent or contract — across Perth metro, regional WA, and anywhere in Australia.*

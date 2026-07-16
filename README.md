@@ -2,7 +2,7 @@
 
 **Live portfolio site → [Abdus56.github.io](https://Abdus56.github.io)**
 
-📍 Perth, Western Australia &nbsp;|&nbsp; 📧 abdus.samadbiz@gmail.com &nbsp;|&nbsp; 📱 0431 986 005 &nbsp;|&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/abdus22)
+📍 Perth, Western Australia &nbsp;|&nbsp; 📧 abdus.samadbiz@gmail.com &nbsp;|&nbsp; 📱 +61431 986 005 &nbsp;|&nbsp; 💼 [LinkedIn](https://www.linkedin.com/in/abdussamad-da)
 
 ---
 
@@ -132,10 +132,10 @@ CGPA: 3.28/4 · Key courses: Econometrics, Finance, Statistics, Macro & Microeco
 ## Certifications
 
 - **Full-Stack Data Professional (FSDP)** — The Data Analytics Institute (Jul 2026) · Credential ID: 6a48e799d9cb9bb7180d841c · Covering Data Analytics, Data Engineering, and AI · Skills: KPI Dashboards, Python, and +4 skills
-- Business Analysis Foundation — LinkedIn Learning (2025)
-- Data Science & AI Bootcamp — Atomcamp (2023)
-- Lean Six Sigma Foundation — LinkedIn Learning (2023)
-- Creating Flowcharts for Beginners — LinkedIn Learning (2023)
+- **Business Analysis Foundation** — LinkedIn Learning (2025)
+- **Data Science & AI Bootcamp** — Atomcamp (2023)
+- **Lean Six Sigma Foundation** — LinkedIn Learning (2023)
+- **Creating Flowcharts for Beginners** — LinkedIn Learning (2023)
 
 ---
 
